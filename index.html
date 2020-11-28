@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Farm's</title>
+</head>
+<style>
+    #sns.card{
+        box-shadow: 1px 1px 3px rgba(0, 0, 0,.5);
+        padding: 20px;
+        border-radius: 5px;
+        transition: box-shadow .5px;
+    }
+    #sns .card:hover{
+        box-shadow: 1px, 1px, 30px, rgba(0, 0, 0,.5);
+    }
+    #sns .card h2{
+        margin: 0;
+    }
+    #sns .card p{
+        margin: 10px 0 0 0;
+    }
+    #sns .card .card_content>img{
+        width: 100%;
+        margin-top: 15px;
+    }
+</style>
+<body>
+    <h2>Farm's - sns</h2>
+    <section id="sns">
+        <article class="card">
+            <div class="card_content">
+                <h3>Potato</h3>
+                <p>안녕하세요 강원도가 고향인 Potato 입니다!!!</p>
+                <img src="potato.PNG">
+            </div>
+
+        </article>
+    </section>
+    <div class="comment">
+        <div id="timeline">
+            <div class="container">
+                <p>댓글</p>
+                <textarea name="" id="postInput" cols="70" rows="3"></textarea>
+                <button onclick="snsPost()">작성</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let timeline = document.querySelector('#timeline');
+    
+        function snsPost() {
+            const postValue = document.querySelector('#postInput').value
+            console.log(postValue);
+            timeline.innerHTML += '<div id = "timeline">'+
+                    '<div class="container">'+
+                    '<h5>서다인</h5>'+
+                    '<div class="fakeimg">'+'<p>'+postValue+'</p>'+'</div>'+
+                    '</div>'+
+                    '</div>';
+        }
+    
+    </script>
+</body>
+</html>
